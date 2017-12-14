@@ -18,7 +18,7 @@ const srcCommonPath = path.join(srcPath, './common')
 const isProduction = process.env.NODE_ENV === 'production'
 
 // PORT.
-const PORT = isProduction ? 8080 : 3001
+const PORT = isProduction ? process.env.PORT : 3001
 
 export default {
   NODE_ENV,
