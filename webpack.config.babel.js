@@ -30,6 +30,7 @@ fs
   })
 
 export default {
+  devtool: 'source-map',
   name: 'server',
   entry: path.join(srcPath, 'app.js'),
   target: 'node',
@@ -66,7 +67,6 @@ export default {
     new CircularDependencyPlugin({
       exclude: /node_modules/
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compress: {
