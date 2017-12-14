@@ -3,9 +3,15 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './components/App'
+import { browserHistory } from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
+import Routes from './routes'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+import './index.css'
+
+ReactDOM.render(
+  <Routes history={browserHistory} />,
+  document.getElementById('root')
+)
+
 registerServiceWorker()
