@@ -5,6 +5,7 @@ import app from './server'
 import config from '../config'
 import debug from 'debug'
 import http from 'http'
+import chalk from 'chalk'
 
 const { PORT } = config
 
@@ -59,4 +60,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port
   debug('Listening on ' + bind)
+  console.log(chalk.green('APP IS RUNNING'))
 }
