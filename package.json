@@ -9,9 +9,11 @@
   "engines": {
     "node": "9.2.1"
   },
-  "description": "a node express api boilerplate",
+  "description": "a nodejs react/express boilerplate designed for heroku deployment",
   "keywords": [
     "express",
+    "react",
+    "heroku",
     "boilerplate",
     "api",
     "api-proxy"
