@@ -6,7 +6,6 @@ require('dotenv').config()
 
 const {
   NODE_ENV = 'development',
-  PORT = 3001
 } = process.env
 
 // Paths.
@@ -17,6 +16,9 @@ const srcCommonPath = path.join(srcPath, './common')
 
 // Environment switch.
 const isProduction = process.env.NODE_ENV === 'production'
+
+// PORT.
+const PORT = isProduction ? 8080 : 3001
 
 export default {
   NODE_ENV,

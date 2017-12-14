@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 router.get('/genpass', (req, res) => {
   const count = 5
-  const passwords = Array.from(Array(count).keys()).map(i =>
+  const passwords = Array.from(Array(count).keys()).map(() =>
     passwordGenerator(12, false)
   )
 
