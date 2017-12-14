@@ -6,7 +6,7 @@
   "name": "react-backend",
   "version": "0.0.1",
   "license": "Apache-2.0",
-  "engine": {
+  "engines": {
     "node": ">=6"
   },
   "description": "a node express api boilerplate",
