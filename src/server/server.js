@@ -16,17 +16,21 @@ const { isProduction } = config
 import index from 'routes/index'
 import users from 'routes/users'
 
+const buildPath = isProduction
+  ? path.join(__dirname, '../src/client/build')
+  : path.join(__dirname, '../client/build')
+
 const app = express()
 if (false === !!isProduction)
   app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, '../src/client/build')))
+app.use(express.static(buildPath))
 app.use('/api', index)
 app.use('/users', users)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/client/build/index.html'))
+  res.sendFile(path.join(buildPath, 'index.html'))
 })
 
 // 404

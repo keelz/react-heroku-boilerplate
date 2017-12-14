@@ -2,9 +2,12 @@
  * @file
  */
 import React, { Component } from 'react'
+import classnames from 'classnames'
 import './App.css'
 
 class App extends Component {
+  // static propTypes = {}
+  // static defaultProps = {}
   state = { passwords: [] }
 
   componentDidMount() {
@@ -18,11 +21,12 @@ class App extends Component {
   }
 
   render() {
+    const { className, props } = this.props
     const { passwords } = this.state
 
     return (
-      <div className="App">
-        <h1>Passwords!</h1>
+      <div className={classnames('App', className)} {...props}>
+        <h1>passwords</h1>
         <ul>
           {passwords.map((password, index) => (
             <li key={index}>{password}</li>
