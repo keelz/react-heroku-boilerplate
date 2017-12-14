@@ -60,5 +60,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port
   debug('Listening on ' + bind)
-  console.log(chalk.green('APP IS RUNNING'))
+  console.log(chalk.green(`APP IS RUNNING ON PORT ${PORT}`))
 }

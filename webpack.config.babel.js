@@ -66,6 +66,13 @@ export default {
     new CircularDependencyPlugin({
       exclude: /node_modules/
     }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
+    }),
     new webpack.DefinePlugin(definePluginArgs)
   ],
   resolve: {
