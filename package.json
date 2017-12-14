@@ -101,6 +101,6 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js",
     "dev": "cross-env PORT=3001 babel-node ./src/app.js",
     "start": "node ./dist/app.bundle.js",
-    "postinstall": "build"
+    "postinstall": "NODE_ENV=production webpack --config webpack.config.babel.js"
   }
 }
