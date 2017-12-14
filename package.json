@@ -50,6 +50,7 @@
     "chokidar": "^1.7.0",
     "circular-dependency-plugin": "^4.3.0",
     "compression-webpack-plugin": "^1.0.1",
+    "concurrently": "^3.5.1",
     "cross-env": "^5.1.1",
     "eslint": "^4.11.0",
     "eslint-config-prettier": "^2.7.0",
@@ -98,9 +99,11 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js",
-    "dev": "cross-env PORT=3001 babel-node ./src/app.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js && cd src/client && yarn run build",
+    "dev": "concurrently \"npm run api-server\" \"npm run client-server\"",
+    "api-server": "cross-env NODE_ENV=development babel-node ./src/app.js",
+    "client-server": "cd src/client && npm run start",
     "start": "node ./dist/app.bundle.js",
-    "postinstall": "NODE_ENV=production webpack --config webpack.config.babel.js"
+    "postinstall": "NODE_ENV=production webpack --config webpack.config.babel.js && cd src/client && yarn run build"
   }
 }

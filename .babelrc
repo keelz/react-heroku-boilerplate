@@ -15,7 +15,7 @@
     ]
   ],
   "presets": [
-    ["env"],
+    ["env", {"targets": "node"}],
     "flow"
   ]
 }

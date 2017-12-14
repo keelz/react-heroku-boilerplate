@@ -34,6 +34,10 @@ export default {
   name: 'server',
   entry: path.join(srcPath, 'app.js'),
   target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false
+  },
   output: {
     path: distPath,
     filename: 'app.bundle.js'
