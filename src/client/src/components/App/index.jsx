@@ -3,11 +3,11 @@
  */
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import './App.css'
+import './style.css'
 
 class App extends Component {
-  // static propTypes = {}
-  // static defaultProps = {}
+  static propTypes = {}
+  static defaultProps = {}
   state = { passwords: [] }
 
   componentDidMount() {
@@ -25,18 +25,21 @@ class App extends Component {
     const { passwords } = this.state
 
     return (
-      <div className={classnames('App', className)} {...props}>
-        <h1>passwords</h1>
-        <ul>
-          {passwords.map((password, index) => (
-            <li key={index}>{password}</li>
-          ))}
-        </ul>
-        <button
-          className="more"
-          onClick={this.getPasswords}>
-          Get More
-        </button>
+      <div>
+        <h1>Home</h1>
+        <div className={classnames('App', className)} {...props}>
+          <h2>passwords</h2>
+          <ul>
+            {passwords.map((password, index) => (
+              <li key={index}>{password}</li>
+            ))}
+          </ul>
+          <button
+            className="more"
+            onClick={this.getPasswords}>
+            Get More
+          </button>
+        </div>
       </div>
     )
   }
