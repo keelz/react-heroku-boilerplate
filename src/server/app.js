@@ -2,7 +2,7 @@
  * @file
  */
 import app from './server'
-import config from '../config'
+import config from '../../config'
 import debug from 'debug'
 import http from 'http'
 import chalk from 'chalk'

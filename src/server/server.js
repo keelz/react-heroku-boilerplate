@@ -6,7 +6,7 @@ import path from 'path'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
-import config from '../config'
+import config from '../../config'
 
 const { isProduction } = config
 

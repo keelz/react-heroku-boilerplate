@@ -7,7 +7,7 @@
       {
         "root": ["./"],
         "alias": {
-          "routes": "./src/routes",
+          "routes": "./src/server/routes",
           "common": "./src/common"
         },
         "extensions": [".js", ".jsx", ".json"]

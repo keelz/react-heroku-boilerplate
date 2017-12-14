@@ -103,7 +103,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js && cd src/client && yarn run build",
     "dev": "concurrently \"npm run api-server\" \"npm run client-server\"",
-    "api-server": "cross-env NODE_ENV=development babel-node ./src/app.js",
+    "api-server": "cross-env NODE_ENV=development babel-node ./src/server/app.js",
     "client-server": "cd src/client && npm run start",
     "start": "node ./dist/app.bundle.js",
     "postinstall": "NODE_ENV=production webpack --config webpack.config.babel.js && cd src/client && yarn --production=false && yarn run build"

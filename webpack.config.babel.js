@@ -13,6 +13,9 @@ const {
   rootPath,
   distPath,
   srcPath,
+  srcClientPath,
+  srcCommonPath,
+  srcServerPath
 } = config
 
 const definePluginArgs = {
@@ -32,7 +35,7 @@ fs
 export default {
   devtool: 'source-map',
   name: 'server',
-  entry: path.join(srcPath, 'app.js'),
+  entry: path.join(srcPath, 'server/app.js'),
   target: 'node',
   node: {
     __dirname: false,
@@ -82,8 +85,9 @@ export default {
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
     alias: {
-      routes: path.join(srcPath, 'routes'),
-      common: path.join(srcPath, 'common')
+      client: path.join(srcClientPath),
+      common: path.join(srcCommonPath),
+      routes: path.join(srcServerPath, '/routes')
     },
     modules: [srcPath, path.join(rootPath, 'node_modules')]
   }

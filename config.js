@@ -14,6 +14,7 @@ const distPath = path.join(rootPath, './dist')
 const srcPath = path.join(rootPath, './src')
 const srcCommonPath = path.join(srcPath, './common')
 const srcClientPath = path.join(srcPath, './client')
+const srcServerPath = path.join(srcPath, './server')
 
 // Environment switch.
 const isProduction = process.env.NODE_ENV === 'production'
@@ -29,5 +30,6 @@ export default {
   srcPath,
   srcCommonPath,
   srcClientPath,
+  srcServerPath,
   isProduction
 }
