@@ -7,6 +7,8 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import config from '../../config'
+import compression from 'compression'
+import helmet from 'helmet'
 
 const { isProduction } = config
 
@@ -21,6 +23,9 @@ const buildPath = isProduction
   : path.join(__dirname, '../client/build')
 
 const app = express()
+app.disable('x-powered-by')
+app.use(helmet())
+app.use(compression())
 if (false === !!isProduction)
   app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'))
 app.use(bodyParser.json())
