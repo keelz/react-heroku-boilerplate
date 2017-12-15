@@ -22,6 +22,10 @@ const buildPath = isProduction
   ? path.join(__dirname, '../src/client/build')
   : path.join(__dirname, '../client/build')
 
+const publicPath = isProduction
+  ? path.join(__dirname, '../src/client/public')
+  : path.join(__dirname, '../client/public')
+
 const app = express()
 app.disable('x-powered-by')
 app.use(helmet())
@@ -32,6 +36,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(buildPath))
+app.use(express.static(publicPath))
 app.use('/api', index)
 app.use('/users', users)
 app.get('*', (req, res) => {
