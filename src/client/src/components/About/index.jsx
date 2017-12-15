@@ -17,8 +17,12 @@ class About extends Component {
     const { className, props } = this.props
 
     return (
-      <div className={classnames('About', className)} {...props}>
-        <h1>About</h1>
+      <div className="container-fluid">
+        <div className="row">
+          <div className={classnames('About mt-3', className)} {...props}>
+            <h2>About</h2>
+          </div>
+        </div>
       </div>
     )
   }
