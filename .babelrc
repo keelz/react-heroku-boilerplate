@@ -7,8 +7,10 @@
       {
         "root": ["./"],
         "alias": {
-          "routes": "./src/server/routes",
-          "common": "./src/common"
+          "client": "./src/client",
+          "common": "./src/common",
+          "controller": "./src/server/controller",
+          "routes": "./src/server/routes"
         },
         "extensions": [".js", ".jsx", ".json"]
       }

@@ -87,6 +87,7 @@ export default {
     alias: {
       client: path.join(srcClientPath),
       common: path.join(srcCommonPath),
+      controller: path.join(srcServerPath, '/controller'),
       routes: path.join(srcServerPath, '/routes')
     },
     modules: [srcPath, path.join(rootPath, 'node_modules')]
